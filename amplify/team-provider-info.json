@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify66bbb54340ea4-staging-00608-authRole",
+      "UnauthRoleArn": "arn:aws:iam::471112516887:role/amplify-amplify66bbb54340ea4-staging-00608-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::471112516887:role/amplify-amplify66bbb54340ea4-staging-00608-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-amplify66bbb54340ea4-staging-00608-deployment",
+      "UnauthRoleName": "amplify-amplify66bbb54340ea4-staging-00608-unauthRole",
+      "StackName": "amplify-amplify66bbb54340ea4-staging-00608",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:471112516887:stack/amplify-amplify66bbb54340ea4-staging-00608/b03aa4d0-ca03-11ee-bb35-0a5637c0ddb3",
+      "AmplifyAppId": "d2vzzu9xzuzlf3"
+    },
+    "categories": {
+      "auth": {
+        "rottenavocadoadmin8fd9c6ae": {}
+      }
+    }
+  }
+}
