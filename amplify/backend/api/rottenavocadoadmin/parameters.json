@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "rottenavocadoadmin",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-02-25T10:15:48.313Z"
+}

@@ -12,8 +12,14 @@
       "AmplifyAppId": "d2vzzu9xzuzlf3"
     },
     "categories": {
+      "api": {
+        "rottenavocadoadmin": {}
+      },
+      "storage": {
+        "imagestorage": {}
+      },
       "auth": {
-        "rottenavocadoadmin8fd9c6ae": {}
+        "rottenavocadoadmin29936921": {}
       }
     }
   }
