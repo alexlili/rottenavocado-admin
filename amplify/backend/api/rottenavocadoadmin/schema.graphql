@@ -1,6 +1,24 @@
-type Note @model @auth(rules: [ { allow: public } ] ){
+type Note @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
   description: String
   image: String
+}
+
+enum MediaTypeArray {
+  ACTION
+  ADVENTURE
+}
+
+type AllMediaType @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  typeArray: MediaTypeArray
+}
+ 
+type TopNews @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  image: String
+  title: String
+  detail: String
+  publishInfo: String
 }
