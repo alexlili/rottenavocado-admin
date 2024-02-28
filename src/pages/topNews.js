@@ -33,6 +33,9 @@ const Index = () => {
                 return <Image
                     width={50}
                     src={record.image}
+                    preview={{
+                        src: record.image,
+                      }}
                 />
             },
         },
