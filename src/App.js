@@ -92,6 +92,8 @@ const App = ({ signOut, user }) => {
         >
           <div
             style={{
+              height: '100%',
+            overflowY: 'auto',
               padding: 24,
               minHeight: 360,
               background: colorBgContainer,

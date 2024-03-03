@@ -138,8 +138,7 @@ const Index = () => {
         setData(dataListFromAPI);
     }
     return (
-        <div style={{height: '100%',
-            overflowY: 'auto'}}>
+        <div>
             <Button
                 onClick={showModal}
                 type="primary"
