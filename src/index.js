@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import TopNews from './pages/topNews';
+import MovieNews from './pages/movieNews';
+import TVNews from './pages/TVNews';
 import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports';
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
       {
         path: "/topNews",
         element: <TopNews />,
+      },
+      {
+        path: "/movieNews",
+        element: <MovieNews />,
+      },
+      {
+        path: "/TVNews",
+        element: <TVNews />,
       }
     ],
   },

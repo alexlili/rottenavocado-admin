@@ -1,6 +1,54 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateMovieNews = /* GraphQL */ `
+  subscription OnCreateMovieNews(
+    $filter: ModelSubscriptionMovieNewsFilterInput
+  ) {
+    onCreateMovieNews(filter: $filter) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateMovieNews = /* GraphQL */ `
+  subscription OnUpdateMovieNews(
+    $filter: ModelSubscriptionMovieNewsFilterInput
+  ) {
+    onUpdateMovieNews(filter: $filter) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteMovieNews = /* GraphQL */ `
+  subscription OnDeleteMovieNews(
+    $filter: ModelSubscriptionMovieNewsFilterInput
+  ) {
+    onDeleteMovieNews(filter: $filter) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateNote = /* GraphQL */ `
   subscription OnCreateNote($filter: ModelSubscriptionNoteFilterInput) {
     onCreateNote(filter: $filter) {
@@ -110,6 +158,48 @@ export const onUpdateTopNews = /* GraphQL */ `
 export const onDeleteTopNews = /* GraphQL */ `
   subscription OnDeleteTopNews($filter: ModelSubscriptionTopNewsFilterInput) {
     onDeleteTopNews(filter: $filter) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateTVNews = /* GraphQL */ `
+  subscription OnCreateTVNews($filter: ModelSubscriptionTVNewsFilterInput) {
+    onCreateTVNews(filter: $filter) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateTVNews = /* GraphQL */ `
+  subscription OnUpdateTVNews($filter: ModelSubscriptionTVNewsFilterInput) {
+    onUpdateTVNews(filter: $filter) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteTVNews = /* GraphQL */ `
+  subscription OnDeleteTVNews($filter: ModelSubscriptionTVNewsFilterInput) {
+    onDeleteTVNews(filter: $filter) {
       id
       image
       title

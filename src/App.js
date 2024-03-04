@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import {
-  HomeOutlined,LogoutOutlined
+  HomeOutlined, LogoutOutlined
 } from '@ant-design/icons';
-import { Layout, Menu, theme, Breadcrumb,Button } from 'antd';
+import { Layout, Menu, theme, Breadcrumb, Button } from 'antd';
 
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
@@ -17,6 +17,16 @@ const menuItems = [
   {
     label: 'topNews',
     key: '/topNews',
+    icon: <HomeOutlined />,
+  },
+  {
+    label: 'movieNews',
+    key: '/movieNews',
+    icon: <HomeOutlined />,
+  },
+  {
+    label: 'TVNews',
+    key: '/TVNews',
     icon: <HomeOutlined />,
   }
 ];
@@ -69,22 +79,37 @@ const App = ({ signOut, user }) => {
       <Layout>
         <Header
           style={{
-            display:'flex',
-            flexDirection:'row',
+            display: 'flex',
+            flexDirection: 'row',
             alignItems: 'center',
-    justifyContent: 'end',
+            justifyContent: 'end',
             padding: 0,
-            paddingRight:20,
+            paddingRight: 20,
             background: colorBgContainer,
+            position:'relative'
           }}
-        ><div style={{paddingRight:10}}>Hello <span style={{color:'#1677ff'}}>{user.username}</span></div>
-        <div onClick={signOut} style={{
-            display:'flex',
-            flexDirection:'row',
+        >
+          {
+            location.pathname != '/' &&
+            <Breadcrumb items={
+              [
+                {
+                  href: '/',
+                  title: <HomeOutlined />,
+                },
+                {
+                  title: currentMenu?.label
+                }
+              ]} style={{position:'absolute',left:20}}/>
+          }
+          <div style={{ paddingRight: 10 }}>Hello <span style={{ color: '#1677ff' }}>{user.username}</span></div>
+          <div onClick={signOut} style={{
+            display: 'flex',
+            flexDirection: 'row',
             alignItems: 'center',
-            color:'#1677ff',
-            cursor:'pointer'
-          }}><LogoutOutlined style={{fontSize:20, color:'#1677ff'}}/>Sign out</div></Header>
+            color: '#1677ff',
+            cursor: 'pointer'
+          }}><LogoutOutlined style={{ fontSize: 20, color: '#1677ff' }} />Sign out</div></Header>
         <Content
           style={{
             margin: '24px 16px 0',
@@ -93,27 +118,13 @@ const App = ({ signOut, user }) => {
           <div
             style={{
               height: '100%',
-            overflowY: 'auto',
+              overflowY: 'auto',
               padding: 24,
               minHeight: 360,
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}
           >
-            {
-              location.pathname != '/' &&
-              location.pathname != '/topNews' &&
-              <Breadcrumb items={
-                [
-                  {
-                    href: '/',
-                    title: <HomeOutlined />,
-                  },
-                  {
-                    title: currentMenu?.label
-                  }
-                ]} />
-            }
             <Outlet />
 
           </div>

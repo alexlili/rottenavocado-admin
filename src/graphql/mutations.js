@@ -1,6 +1,57 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createMovieNews = /* GraphQL */ `
+  mutation CreateMovieNews(
+    $input: CreateMovieNewsInput!
+    $condition: ModelMovieNewsConditionInput
+  ) {
+    createMovieNews(input: $input, condition: $condition) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateMovieNews = /* GraphQL */ `
+  mutation UpdateMovieNews(
+    $input: UpdateMovieNewsInput!
+    $condition: ModelMovieNewsConditionInput
+  ) {
+    updateMovieNews(input: $input, condition: $condition) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteMovieNews = /* GraphQL */ `
+  mutation DeleteMovieNews(
+    $input: DeleteMovieNewsInput!
+    $condition: ModelMovieNewsConditionInput
+  ) {
+    deleteMovieNews(input: $input, condition: $condition) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createNote = /* GraphQL */ `
   mutation CreateNote(
     $input: CreateNoteInput!
@@ -131,6 +182,57 @@ export const deleteTopNews = /* GraphQL */ `
     $condition: ModelTopNewsConditionInput
   ) {
     deleteTopNews(input: $input, condition: $condition) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createTVNews = /* GraphQL */ `
+  mutation CreateTVNews(
+    $input: CreateTVNewsInput!
+    $condition: ModelTVNewsConditionInput
+  ) {
+    createTVNews(input: $input, condition: $condition) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateTVNews = /* GraphQL */ `
+  mutation UpdateTVNews(
+    $input: UpdateTVNewsInput!
+    $condition: ModelTVNewsConditionInput
+  ) {
+    updateTVNews(input: $input, condition: $condition) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteTVNews = /* GraphQL */ `
+  mutation DeleteTVNews(
+    $input: DeleteTVNewsInput!
+    $condition: ModelTVNewsConditionInput
+  ) {
+    deleteTVNews(input: $input, condition: $condition) {
       id
       image
       title

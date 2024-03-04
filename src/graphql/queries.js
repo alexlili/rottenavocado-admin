@@ -1,6 +1,42 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getMovieNews = /* GraphQL */ `
+  query GetMovieNews($id: ID!) {
+    getMovieNews(id: $id) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listMovieNews = /* GraphQL */ `
+  query ListMovieNews(
+    $filter: ModelMovieNewsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMovieNews(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        image
+        title
+        detail
+        publishInfo
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getNote = /* GraphQL */ `
   query GetNote($id: ID!) {
     getNote(id: $id) {
@@ -86,6 +122,42 @@ export const listTopNews = /* GraphQL */ `
     $nextToken: String
   ) {
     listTopNews(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        image
+        title
+        detail
+        publishInfo
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getTVNews = /* GraphQL */ `
+  query GetTVNews($id: ID!) {
+    getTVNews(id: $id) {
+      id
+      image
+      title
+      detail
+      publishInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listTVNews = /* GraphQL */ `
+  query ListTVNews(
+    $filter: ModelTVNewsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTVNews(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         image
