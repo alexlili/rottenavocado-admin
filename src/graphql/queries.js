@@ -1,6 +1,40 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getUpNextMedia = /* GraphQL */ `
+  query GetUpNextMedia($id: ID!) {
+    getUpNextMedia(id: $id) {
+      id
+      coverImage
+      profileImage
+      title
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listUpNextMedias = /* GraphQL */ `
+  query ListUpNextMedias(
+    $filter: ModelUpNextMediaFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUpNextMedias(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        coverImage
+        profileImage
+        title
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getMovieNews = /* GraphQL */ `
   query GetMovieNews($id: ID!) {
     getMovieNews(id: $id) {

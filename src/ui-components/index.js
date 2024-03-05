@@ -14,4 +14,6 @@ export { default as TVNewsCreateForm } from "./TVNewsCreateForm";
 export { default as TVNewsUpdateForm } from "./TVNewsUpdateForm";
 export { default as TopNewsCreateForm } from "./TopNewsCreateForm";
 export { default as TopNewsUpdateForm } from "./TopNewsUpdateForm";
+export { default as UpNextMediaCreateForm } from "./UpNextMediaCreateForm";
+export { default as UpNextMediaUpdateForm } from "./UpNextMediaUpdateForm";
 export { default as studioTheme } from "./studioTheme";

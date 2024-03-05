@@ -28,6 +28,11 @@ const menuItems = [
     label: 'TVNews',
     key: '/TVNews',
     icon: <HomeOutlined />,
+  },
+  {
+    label: 'upNextMedias',
+    key: '/upNextMedias',
+    icon: <HomeOutlined />,
   }
 ];
 const App = ({ signOut, user }) => {

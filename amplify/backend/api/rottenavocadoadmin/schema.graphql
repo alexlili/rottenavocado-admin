@@ -1,3 +1,11 @@
+type UpNextMedia @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  coverImage: String
+  profileImage: String
+  title: String
+}
+
+
 type MovieNews @model @auth(rules: [{allow: public}]) {
   id: ID!
   image: String
@@ -30,6 +38,7 @@ type TopNews @model @auth(rules: [{allow: public}]) {
   detail: String
   publishInfo: String
 }
+
 type TVNews @model @auth(rules: [{allow: public}]) {
   id: ID!
   image: String
@@ -37,3 +46,4 @@ type TVNews @model @auth(rules: [{allow: public}]) {
   detail: String
   publishInfo: String
 }
+ 

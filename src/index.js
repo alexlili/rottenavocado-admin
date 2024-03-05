@@ -5,6 +5,7 @@ import App from './App';
 import TopNews from './pages/topNews';
 import MovieNews from './pages/movieNews';
 import TVNews from './pages/TVNews';
+import UpNextMedias from './pages/upNextMedia'
 import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports';
@@ -31,7 +32,12 @@ const router = createBrowserRouter([
       {
         path: "/TVNews",
         element: <TVNews />,
-      }
+      },
+      {
+        path: "/upNextMedias",
+        element: <UpNextMedias />,
+      },
+      
     ],
   },
 ]);

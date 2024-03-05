@@ -1,6 +1,54 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createUpNextMedia = /* GraphQL */ `
+  mutation CreateUpNextMedia(
+    $input: CreateUpNextMediaInput!
+    $condition: ModelUpNextMediaConditionInput
+  ) {
+    createUpNextMedia(input: $input, condition: $condition) {
+      id
+      coverImage
+      profileImage
+      title
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateUpNextMedia = /* GraphQL */ `
+  mutation UpdateUpNextMedia(
+    $input: UpdateUpNextMediaInput!
+    $condition: ModelUpNextMediaConditionInput
+  ) {
+    updateUpNextMedia(input: $input, condition: $condition) {
+      id
+      coverImage
+      profileImage
+      title
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteUpNextMedia = /* GraphQL */ `
+  mutation DeleteUpNextMedia(
+    $input: DeleteUpNextMediaInput!
+    $condition: ModelUpNextMediaConditionInput
+  ) {
+    deleteUpNextMedia(input: $input, condition: $condition) {
+      id
+      coverImage
+      profileImage
+      title
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createMovieNews = /* GraphQL */ `
   mutation CreateMovieNews(
     $input: CreateMovieNewsInput!
