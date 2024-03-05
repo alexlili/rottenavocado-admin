@@ -1,10 +1,18 @@
+type FeaturedToday @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  backgroundImage: String
+  people: String
+  title: String
+  photographerInfo: String
+}
+
+
 type UpNextMedia @model @auth(rules: [{allow: public}]) {
   id: ID!
   coverImage: String
   profileImage: String
   title: String
 }
-
 
 type MovieNews @model @auth(rules: [{allow: public}]) {
   id: ID!

@@ -1,6 +1,54 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateFeaturedToday = /* GraphQL */ `
+  subscription OnCreateFeaturedToday(
+    $filter: ModelSubscriptionFeaturedTodayFilterInput
+  ) {
+    onCreateFeaturedToday(filter: $filter) {
+      id
+      backgroundImage
+      people
+      title
+      photographerInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateFeaturedToday = /* GraphQL */ `
+  subscription OnUpdateFeaturedToday(
+    $filter: ModelSubscriptionFeaturedTodayFilterInput
+  ) {
+    onUpdateFeaturedToday(filter: $filter) {
+      id
+      backgroundImage
+      people
+      title
+      photographerInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteFeaturedToday = /* GraphQL */ `
+  subscription OnDeleteFeaturedToday(
+    $filter: ModelSubscriptionFeaturedTodayFilterInput
+  ) {
+    onDeleteFeaturedToday(filter: $filter) {
+      id
+      backgroundImage
+      people
+      title
+      photographerInfo
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateUpNextMedia = /* GraphQL */ `
   subscription OnCreateUpNextMedia(
     $filter: ModelSubscriptionUpNextMediaFilterInput

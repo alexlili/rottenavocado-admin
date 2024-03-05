@@ -33,6 +33,11 @@ const menuItems = [
     label: 'upNextMedias',
     key: '/upNextMedias',
     icon: <HomeOutlined />,
+  },
+  {
+    label: 'featuredToday',
+    key: '/featuredToday',
+    icon: <HomeOutlined />,
   }
 ];
 const App = ({ signOut, user }) => {
