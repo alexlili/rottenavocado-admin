@@ -6,7 +6,7 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Button, Flex, Grid } from "@aws-amplify/ui-react";
+import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { generateClient } from "aws-amplify/api";
 import { getMovie } from "../graphql/queries";
@@ -24,12 +24,33 @@ export default function MovieUpdateForm(props) {
     overrides,
     ...rest
   } = props;
-  const initialValues = {};
+  const initialValues = {
+    director: "",
+    actor: "",
+    name: "",
+    year: "",
+    imageList: "",
+    introduction: "",
+  };
+  const [director, setDirector] = React.useState(initialValues.director);
+  const [actor, setActor] = React.useState(initialValues.actor);
+  const [name, setName] = React.useState(initialValues.name);
+  const [year, setYear] = React.useState(initialValues.year);
+  const [imageList, setImageList] = React.useState(initialValues.imageList);
+  const [introduction, setIntroduction] = React.useState(
+    initialValues.introduction
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = movieRecord
       ? { ...initialValues, ...movieRecord }
       : initialValues;
+    setDirector(cleanValues.director);
+    setActor(cleanValues.actor);
+    setName(cleanValues.name);
+    setYear(cleanValues.year);
+    setImageList(cleanValues.imageList);
+    setIntroduction(cleanValues.introduction);
     setErrors({});
   };
   const [movieRecord, setMovieRecord] = React.useState(movieModelProp);
@@ -48,7 +69,14 @@ export default function MovieUpdateForm(props) {
     queryData();
   }, [idProp, movieModelProp]);
   React.useEffect(resetStateValues, [movieRecord]);
-  const validations = {};
+  const validations = {
+    director: [],
+    actor: [],
+    name: [],
+    year: [],
+    imageList: [],
+    introduction: [],
+  };
   const runValidationTasks = async (
     fieldName,
     currentValue,
@@ -74,7 +102,14 @@ export default function MovieUpdateForm(props) {
       padding="20px"
       onSubmit={async (event) => {
         event.preventDefault();
-        let modelFields = {};
+        let modelFields = {
+          director: director ?? null,
+          actor: actor ?? null,
+          name: name ?? null,
+          year: year ?? null,
+          imageList: imageList ?? null,
+          introduction: introduction ?? null,
+        };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
             if (Array.isArray(modelFields[fieldName])) {
@@ -125,6 +160,180 @@ export default function MovieUpdateForm(props) {
       {...getOverrideProps(overrides, "MovieUpdateForm")}
       {...rest}
     >
+      <TextField
+        label="Director"
+        isRequired={false}
+        isReadOnly={false}
+        value={director}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              director: value,
+              actor,
+              name,
+              year,
+              imageList,
+              introduction,
+            };
+            const result = onChange(modelFields);
+            value = result?.director ?? value;
+          }
+          if (errors.director?.hasError) {
+            runValidationTasks("director", value);
+          }
+          setDirector(value);
+        }}
+        onBlur={() => runValidationTasks("director", director)}
+        errorMessage={errors.director?.errorMessage}
+        hasError={errors.director?.hasError}
+        {...getOverrideProps(overrides, "director")}
+      ></TextField>
+      <TextField
+        label="Actor"
+        isRequired={false}
+        isReadOnly={false}
+        value={actor}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              director,
+              actor: value,
+              name,
+              year,
+              imageList,
+              introduction,
+            };
+            const result = onChange(modelFields);
+            value = result?.actor ?? value;
+          }
+          if (errors.actor?.hasError) {
+            runValidationTasks("actor", value);
+          }
+          setActor(value);
+        }}
+        onBlur={() => runValidationTasks("actor", actor)}
+        errorMessage={errors.actor?.errorMessage}
+        hasError={errors.actor?.hasError}
+        {...getOverrideProps(overrides, "actor")}
+      ></TextField>
+      <TextField
+        label="Name"
+        isRequired={false}
+        isReadOnly={false}
+        value={name}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              director,
+              actor,
+              name: value,
+              year,
+              imageList,
+              introduction,
+            };
+            const result = onChange(modelFields);
+            value = result?.name ?? value;
+          }
+          if (errors.name?.hasError) {
+            runValidationTasks("name", value);
+          }
+          setName(value);
+        }}
+        onBlur={() => runValidationTasks("name", name)}
+        errorMessage={errors.name?.errorMessage}
+        hasError={errors.name?.hasError}
+        {...getOverrideProps(overrides, "name")}
+      ></TextField>
+      <TextField
+        label="Year"
+        isRequired={false}
+        isReadOnly={false}
+        value={year}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              director,
+              actor,
+              name,
+              year: value,
+              imageList,
+              introduction,
+            };
+            const result = onChange(modelFields);
+            value = result?.year ?? value;
+          }
+          if (errors.year?.hasError) {
+            runValidationTasks("year", value);
+          }
+          setYear(value);
+        }}
+        onBlur={() => runValidationTasks("year", year)}
+        errorMessage={errors.year?.errorMessage}
+        hasError={errors.year?.hasError}
+        {...getOverrideProps(overrides, "year")}
+      ></TextField>
+      <TextField
+        label="Image list"
+        isRequired={false}
+        isReadOnly={false}
+        value={imageList}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              director,
+              actor,
+              name,
+              year,
+              imageList: value,
+              introduction,
+            };
+            const result = onChange(modelFields);
+            value = result?.imageList ?? value;
+          }
+          if (errors.imageList?.hasError) {
+            runValidationTasks("imageList", value);
+          }
+          setImageList(value);
+        }}
+        onBlur={() => runValidationTasks("imageList", imageList)}
+        errorMessage={errors.imageList?.errorMessage}
+        hasError={errors.imageList?.hasError}
+        {...getOverrideProps(overrides, "imageList")}
+      ></TextField>
+      <TextField
+        label="Introduction"
+        isRequired={false}
+        isReadOnly={false}
+        value={introduction}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              director,
+              actor,
+              name,
+              year,
+              imageList,
+              introduction: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.introduction ?? value;
+          }
+          if (errors.introduction?.hasError) {
+            runValidationTasks("introduction", value);
+          }
+          setIntroduction(value);
+        }}
+        onBlur={() => runValidationTasks("introduction", introduction)}
+        errorMessage={errors.introduction?.errorMessage}
+        hasError={errors.introduction?.hasError}
+        {...getOverrideProps(overrides, "introduction")}
+      ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

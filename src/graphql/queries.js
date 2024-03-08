@@ -1,6 +1,46 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getMovie = /* GraphQL */ `
+  query GetMovie($id: ID!) {
+    getMovie(id: $id) {
+      id
+      director
+      actor
+      name
+      year
+      imageList
+      introduction
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listMovies = /* GraphQL */ `
+  query ListMovies(
+    $filter: ModelMovieFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMovies(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        director
+        actor
+        name
+        year
+        imageList
+        introduction
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getBornToday = /* GraphQL */ `
   query GetBornToday($id: ID!) {
     getBornToday(id: $id) {

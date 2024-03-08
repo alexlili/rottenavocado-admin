@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { GridProps } from "@aws-amplify/ui-react";
+import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -21,11 +21,31 @@ export declare type ValidationResponse = {
     errorMessage?: string;
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
-export declare type MovieCreateFormInputValues = {};
-export declare type MovieCreateFormValidationValues = {};
+export declare type MovieCreateFormInputValues = {
+    director?: string;
+    actor?: string;
+    name?: string;
+    year?: string;
+    imageList?: string;
+    introduction?: string;
+};
+export declare type MovieCreateFormValidationValues = {
+    director?: ValidationFunction<string>;
+    actor?: ValidationFunction<string>;
+    name?: ValidationFunction<string>;
+    year?: ValidationFunction<string>;
+    imageList?: ValidationFunction<string>;
+    introduction?: ValidationFunction<string>;
+};
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type MovieCreateFormOverridesProps = {
     MovieCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
+    director?: PrimitiveOverrideProps<TextFieldProps>;
+    actor?: PrimitiveOverrideProps<TextFieldProps>;
+    name?: PrimitiveOverrideProps<TextFieldProps>;
+    year?: PrimitiveOverrideProps<TextFieldProps>;
+    imageList?: PrimitiveOverrideProps<TextFieldProps>;
+    introduction?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type MovieCreateFormProps = React.PropsWithChildren<{
     overrides?: MovieCreateFormOverridesProps | undefined | null;

@@ -43,6 +43,11 @@ const menuItems = [
     label: 'bornToday',
     key: '/bornToday',
     icon: <HomeOutlined />,
+  },
+  {
+    label: 'movie',
+    key: '/movie',
+    icon: <HomeOutlined />,
   }
 ];
 const App = ({ signOut, user }) => {
