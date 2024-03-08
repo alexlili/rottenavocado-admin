@@ -6,6 +6,8 @@
 
 export { default as AllMediaTypeCreateForm } from "./AllMediaTypeCreateForm";
 export { default as AllMediaTypeUpdateForm } from "./AllMediaTypeUpdateForm";
+export { default as BornTodayCreateForm } from "./BornTodayCreateForm";
+export { default as BornTodayUpdateForm } from "./BornTodayUpdateForm";
 export { default as FeaturedTodayCreateForm } from "./FeaturedTodayCreateForm";
 export { default as FeaturedTodayUpdateForm } from "./FeaturedTodayUpdateForm";
 export { default as MovieNewsCreateForm } from "./MovieNewsCreateForm";

@@ -1,10 +1,10 @@
 import { uploadData, getUrl, remove } from 'aws-amplify/storage';
 import React, { useState, useEffect } from 'react';
 import { Image, Button, Table, Typography, Modal } from 'antd';
-import { listFeaturedTodays } from "../graphql/queries";
+import { listBornTodays } from "../graphql/queries";
 import {
-    createFeaturedToday as createFeaturedTodaysMutation,
-    deleteFeaturedToday as deleteFeaturedTodaysMutation,
+    createBornToday as createBornTodayMutation,
+    deleteBornToday as deleteBornTodayMutation,
 } from "../graphql/mutations";
 import { generateClient } from "aws-amplify/api";
 import {
@@ -24,36 +24,30 @@ const Index = () => {
 
     const columns = [
         {
-            title: 'backgroundImage',
-            dataIndex: 'backgroundImage',
+            title: 'avatarImage',
+            dataIndex: 'avatarImage',
             width: '25%',
             editable: false,
             render: (_, record) => {
                 console.log(record)
                 return <Image
                     width={50}
-                    src={record.backgroundImage}
+                    src={record.avatarImage}
                     preview={{
-                        src: record.backgroundImage,
+                        src: record.avatarImage,
                       }}
                 />
             },
         },
         {
-            title: 'title',
-            dataIndex: 'title',
+            title: 'name',
+            dataIndex: 'name',
             width: '15%',
             editable: true,
         },
         {
-            title: 'people',
-            dataIndex: 'people',
-            width: '40%',
-            editable: true,
-        },
-        {
-            title: 'photographerInfo',
-            dataIndex: 'photographerInfo',
+            title: 'age',
+            dataIndex: 'age',
             width: '40%',
             editable: true,
         },
@@ -64,7 +58,7 @@ const Index = () => {
                 return (
                     <span>
                         <Typography.Link
-                            onClick={() => deleteFeaturedTodaysItem(record)}
+                            onClick={() => deleteBornTodayItem(record)}
                             style={{
                                 marginRight: 8,
                             }}
@@ -78,7 +72,7 @@ const Index = () => {
     ];
 
     useEffect(() => {
-        fetchAllFeaturedTodays();
+        fetchAllBornToday();
     }, [])
     const showModal = () => {
         setIsModalOpen(true);
@@ -86,51 +80,50 @@ const Index = () => {
     const handleCancel = () => {
         setIsModalOpen(false);
       };
-    async function createFeaturedTodaysItem(event) {
+    async function createBornTodayItem(event) {
         event.preventDefault();
         const form = new FormData(event.target);
         console.log(files)
         const data = {
-            title: form.get("title"),
-            people: form.get("people"),
-            photographerInfo: form.get("photographerInfo"),
-            backgroundImage: files[0],
+            name: form.get("name"),
+            age: form.get("age"),
+            avatarImage: files[0],
         };
         console.log(data)
-        if (!!data.backgroundImage) {
+        if (!!data.avatarImage) {
             const result = await uploadData({
-                key: form.get("title"),
+                key: form.get("name"),
                 data: files[0]
             }).result;
             console.log('Succeeded: ', result);
         };
         await client.graphql({
-            query: createFeaturedTodaysMutation,
+            query: createBornTodayMutation,
             variables: { input: data },
         });
-        fetchAllFeaturedTodays();
+        fetchAllBornToday();
         setIsModalOpen(false);
         event.target.reset();
     }
-    async function deleteFeaturedTodaysItem({ id, title }) {
+    async function deleteBornTodayItem({ id, name }) {
         const newNotes = data.filter((note) => note.id !== id);
         setData(newNotes);
-        await remove({ key: title });
+        await remove({ key: name });
         await client.graphql({
-            query: deleteFeaturedTodaysMutation,
+            query: deleteBornTodayMutation,
             variables: { input: { id } },
         });
     }
-    async function fetchAllFeaturedTodays() {
-        const apiData = await client.graphql({ query: listFeaturedTodays });
-        const dataListFromAPI = apiData.data.listFeaturedTodays.items;
+    async function fetchAllBornToday() {
+        const apiData = await client.graphql({ query: listBornTodays });
+        const dataListFromAPI = apiData.data.listBornTodays.items;
         await Promise.all(
             dataListFromAPI.map(async (note) => {
                 console.log(note)
-                if (note.backgroundImage) {
-                    const getUrlResult = await getUrl({ key: note.title });
+                if (note.avatarImage) {
+                    const getUrlResult = await getUrl({ key: note.name });
                     console.log(getUrlResult)
-                    note.backgroundImage = getUrlResult.url;
+                    note.avatarImage = getUrlResult.url;
                 }
                 return note;
             })
@@ -146,7 +139,7 @@ const Index = () => {
                     marginBottom: 16,
                 }}
             >
-                Add a piece of featured today
+                Add a star
             </Button>
             <Table
             rowKey={record=>record.id}
@@ -156,45 +149,37 @@ const Index = () => {
                 columns={columns}
             />
             <Modal title="Create a piece of top news" open={isModalOpen} footer={null} onCancel={handleCancel}>
-                <View as="form" margin="3rem 0" onSubmit={createFeaturedTodaysItem}>
+                <View as="form" margin="3rem 0" onSubmit={createBornTodayItem}>
                     <Flex direction="column" justifyContent="center">
                         <DropZone
                             onDropComplete={({ acceptedFiles, rejectedFiles }) => {
                                 setFiles(acceptedFiles);
                             }}
                         >
-                            Drag backgroundImage here
+                            Drag avatarImages here
                         </DropZone>
                         {files.map((file) => (
                             <Text key={file.name}>{file.name}</Text>
                         ))}
                         <TextField
-                            name="title"
-                            placeholder="FeaturedTodays title"
-                            label="FeaturedTodays title"
+                            name="name"
+                            placeholder="BornToday name"
+                            label="BornToday name"
                             variation="quiet"
                             labelHidden={true}
                             required
                         />
                         <TextField
-                            name="people"
-                            placeholder="FeaturedTodays people"
-                            label="FeaturedTodays people"
-                            variation="quiet"
-                            labelHidden={true}
-                            required
-                        />
-                        <TextField
-                            name="photographerInfo"
-                            placeholder="FeaturedTodays photographerInfo"
-                            label="FeaturedTodays photographerInfo"
+                            name="age"
+                            placeholder="BornToday age"
+                            label="BornToday age"
                             variation="quiet"
                             labelHidden={true}
                             required
                         />
 
                         <AmplifyButton type="submit" variation="primary">
-                            Create FeaturedTodays
+                            Create BornToday
                         </AmplifyButton>
                     </Flex>
                 </View>

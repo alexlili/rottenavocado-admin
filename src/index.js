@@ -7,6 +7,7 @@ import MovieNews from './pages/movieNews';
 import TVNews from './pages/TVNews';
 import UpNextMedias from './pages/upNextMedia'
 import FeaturedToday from './pages/featuredToday'
+import BornToday from './pages/bornToday'
 import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports';
@@ -42,7 +43,10 @@ const router = createBrowserRouter([
         path: "/featuredToday",
         element: <FeaturedToday />,
       },
-      
+      {
+        path: "/bornToday",
+        element: <BornToday />,
+      },
       
     ],
   },

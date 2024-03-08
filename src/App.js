@@ -38,6 +38,11 @@ const menuItems = [
     label: 'featuredToday',
     key: '/featuredToday',
     icon: <HomeOutlined />,
+  },
+  {
+    label: 'bornToday',
+    key: '/bornToday',
+    icon: <HomeOutlined />,
   }
 ];
 const App = ({ signOut, user }) => {
@@ -70,7 +75,7 @@ const App = ({ signOut, user }) => {
           console.log(collapsed, type);
         }}
       >
-        <div className="demo-logo-vertical" style={{ height: 64, display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>IDMB</div>
+        <div className="demo-logo-vertical" style={{ height: 64, display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>Rottenavocado Admin</div>
         <Menu
           defaultSelectedKeys={'topNews'}
           theme="dark"

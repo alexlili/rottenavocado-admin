@@ -1,3 +1,11 @@
+type BornToday @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  avatarImage: String
+  name: String
+  age: String
+}
+
+
 type FeaturedToday @model @auth(rules: [{allow: public}]) {
   id: ID!
   backgroundImage: String
@@ -5,7 +13,6 @@ type FeaturedToday @model @auth(rules: [{allow: public}]) {
   title: String
   photographerInfo: String
 }
-
 
 type UpNextMedia @model @auth(rules: [{allow: public}]) {
   id: ID!

@@ -15,6 +15,68 @@
         "name" : "Query",
         "description" : null,
         "fields" : [ {
+          "name" : "getBornToday",
+          "description" : null,
+          "args" : [ {
+            "name" : "id",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "SCALAR",
+                "name" : "ID",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "BornToday",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "listBornTodays",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelBornTodayFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelBornTodayConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
           "name" : "getFeaturedToday",
           "description" : null,
           "args" : [ {
@@ -455,7 +517,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "FeaturedToday",
+        "name" : "BornToday",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -473,7 +535,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "backgroundImage",
+          "name" : "avatarImage",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -484,7 +546,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "people",
+          "name" : "name",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -495,18 +557,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "title",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "photographerInfo",
+          "name" : "age",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -580,7 +631,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "ModelFeaturedTodayConnection",
+        "name" : "ModelBornTodayConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -594,7 +645,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "OBJECT",
-                "name" : "FeaturedToday",
+                "name" : "BornToday",
                 "ofType" : null
               }
             }
@@ -619,7 +670,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelFeaturedTodayFilterInput",
+        "name" : "ModelBornTodayFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -632,7 +683,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "backgroundImage",
+          "name" : "avatarImage",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -641,7 +692,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "people",
+          "name" : "name",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -650,16 +701,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "title",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "photographerInfo",
+          "name" : "age",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -675,7 +717,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelFeaturedTodayFilterInput",
+              "name" : "ModelBornTodayFilterInput",
               "ofType" : null
             }
           },
@@ -688,7 +730,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelFeaturedTodayFilterInput",
+              "name" : "ModelBornTodayFilterInput",
               "ofType" : null
             }
           },
@@ -698,7 +740,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelFeaturedTodayFilterInput",
+            "name" : "ModelBornTodayFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1112,6 +1154,232 @@
           "type" : {
             "kind" : "INPUT_OBJECT",
             "name" : "ModelSizeInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
+        "name" : "FeaturedToday",
+        "description" : null,
+        "fields" : [ {
+          "name" : "id",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "backgroundImage",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "people",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "title",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "photographerInfo",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "createdAt",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "AWSDateTime",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "updatedAt",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "AWSDateTime",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
+        "name" : "ModelFeaturedTodayConnection",
+        "description" : null,
+        "fields" : [ {
+          "name" : "items",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "LIST",
+              "name" : null,
+              "ofType" : {
+                "kind" : "OBJECT",
+                "name" : "FeaturedToday",
+                "ofType" : null
+              }
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "nextToken",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelFeaturedTodayFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "backgroundImage",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "people",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "title",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "photographerInfo",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "and",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelFeaturedTodayFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "or",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelFeaturedTodayFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "not",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelFeaturedTodayFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -2430,6 +2698,105 @@
         "name" : "Mutation",
         "description" : null,
         "fields" : [ {
+          "name" : "createBornToday",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "CreateBornTodayInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelBornTodayConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "BornToday",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "updateBornToday",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "UpdateBornTodayInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelBornTodayConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "BornToday",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "deleteBornToday",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "DeleteBornTodayInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelBornTodayConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "BornToday",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
           "name" : "createFeaturedToday",
           "description" : null,
           "args" : [ {
@@ -3125,6 +3492,193 @@
         } ],
         "inputFields" : null,
         "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "CreateBornTodayInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "avatarImage",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "name",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "age",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelBornTodayConditionInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "avatarImage",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "name",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "age",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "and",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelBornTodayConditionInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "or",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelBornTodayConditionInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "not",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBornTodayConditionInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "UpdateBornTodayInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "avatarImage",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "name",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "age",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "DeleteBornTodayInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
         "enumValues" : null,
         "possibleTypes" : null
       }, {
@@ -4499,6 +5053,66 @@
         "name" : "Subscription",
         "description" : null,
         "fields" : [ {
+          "name" : "onCreateBornToday",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelSubscriptionBornTodayFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "BornToday",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "onUpdateBornToday",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelSubscriptionBornTodayFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "BornToday",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "onDeleteBornToday",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelSubscriptionBornTodayFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "BornToday",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
           "name" : "onCreateFeaturedToday",
           "description" : null,
           "args" : [ {
@@ -4925,7 +5539,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelSubscriptionFeaturedTodayFilterInput",
+        "name" : "ModelSubscriptionBornTodayFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -4938,7 +5552,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "backgroundImage",
+          "name" : "avatarImage",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4947,7 +5561,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "people",
+          "name" : "name",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4956,16 +5570,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "title",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelSubscriptionStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "photographerInfo",
+          "name" : "age",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4981,7 +5586,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionFeaturedTodayFilterInput",
+              "name" : "ModelSubscriptionBornTodayFilterInput",
               "ofType" : null
             }
           },
@@ -4994,7 +5599,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionFeaturedTodayFilterInput",
+              "name" : "ModelSubscriptionBornTodayFilterInput",
               "ofType" : null
             }
           },
@@ -5253,6 +5858,86 @@
             "ofType" : {
               "kind" : "SCALAR",
               "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelSubscriptionFeaturedTodayFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelSubscriptionIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "backgroundImage",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelSubscriptionStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "people",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelSubscriptionStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "title",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelSubscriptionStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "photographerInfo",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelSubscriptionStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "and",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelSubscriptionFeaturedTodayFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "or",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelSubscriptionFeaturedTodayFilterInput",
               "ofType" : null
             }
           },
@@ -5697,23 +6382,152 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
-        "kind" : "ENUM",
-        "name" : "ModelSortDirection",
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelBooleanInput",
         "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelFloatInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "le",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "lt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ge",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "between",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "Float",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "SCALAR",
+        "name" : "Float",
+        "description" : "Built-in Float",
         "fields" : null,
         "inputFields" : null,
         "interfaces" : null,
-        "enumValues" : [ {
-          "name" : "ASC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "DESC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
+        "enumValues" : null,
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
@@ -5818,107 +6632,23 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
-        "kind" : "SCALAR",
-        "name" : "Float",
-        "description" : "Built-in Float",
+        "kind" : "ENUM",
+        "name" : "ModelSortDirection",
+        "description" : null,
         "fields" : null,
         "inputFields" : null,
         "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelFloatInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "ne",
+        "enumValues" : [ {
+          "name" : "ASC",
           "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
+          "isDeprecated" : false,
+          "deprecationReason" : null
         }, {
-          "name" : "eq",
+          "name" : "DESC",
           "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "le",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "lt",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "ge",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "gt",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "between",
-          "description" : null,
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Float",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeExists",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeType",
-          "description" : null,
-          "type" : {
-            "kind" : "ENUM",
-            "name" : "ModelAttributeTypes",
-            "ofType" : null
-          },
-          "defaultValue" : null
+          "isDeprecated" : false,
+          "deprecationReason" : null
         } ],
-        "interfaces" : null,
-        "enumValues" : null,
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
@@ -5940,6 +6670,100 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelIntInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "le",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "lt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ge",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "between",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
             "ofType" : null
           },
           "defaultValue" : null
@@ -6043,145 +6867,6 @@
               "name" : "Int",
               "ofType" : null
             }
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelIntInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "ne",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "eq",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "le",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "lt",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "ge",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "gt",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "between",
-          "description" : null,
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeExists",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeType",
-          "description" : null,
-          "type" : {
-            "kind" : "ENUM",
-            "name" : "ModelAttributeTypes",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelBooleanInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "ne",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "eq",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeExists",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeType",
-          "description" : null,
-          "type" : {
-            "kind" : "ENUM",
-            "name" : "ModelAttributeTypes",
-            "ofType" : null
           },
           "defaultValue" : null
         } ],
@@ -6972,6 +7657,14 @@
         "onFragment" : false,
         "onField" : true
       }, {
+        "name" : "aws_oidc",
+        "description" : "Tells the service this field/object has access authorized by an OIDC token.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
         "name" : "aws_iam",
         "description" : "Tells the service this field/object has access authorized by sigv4 signing.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
@@ -6993,6 +7686,35 @@
           },
           "defaultValue" : "\"No longer supported\""
         } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "aws_auth",
+        "description" : "Directs the schema to enforce authorization on a field",
+        "locations" : [ "FIELD_DEFINITION" ],
+        "args" : [ {
+          "name" : "cognito_groups",
+          "description" : "List of cognito user pool groups which have access on this field",
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "aws_lambda",
+        "description" : "Tells the service this field/object has access authorized by a Lambda Authorizer.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
         "onOperation" : false,
         "onFragment" : false,
         "onField" : false
@@ -7039,35 +7761,6 @@
         "onFragment" : false,
         "onField" : false
       }, {
-        "name" : "aws_auth",
-        "description" : "Directs the schema to enforce authorization on a field",
-        "locations" : [ "FIELD_DEFINITION" ],
-        "args" : [ {
-          "name" : "cognito_groups",
-          "description" : "List of cognito user pool groups which have access on this field",
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_lambda",
-        "description" : "Tells the service this field/object has access authorized by a Lambda Authorizer.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
         "name" : "aws_subscribe",
         "description" : "Tells the service which mutation triggers this subscription.",
         "locations" : [ "FIELD_DEFINITION" ],
@@ -7091,14 +7784,6 @@
       }, {
         "name" : "aws_api_key",
         "description" : "Tells the service this field/object has access authorized by an API key.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_oidc",
-        "description" : "Tells the service this field/object has access authorized by an OIDC token.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
         "args" : [ ],
         "onOperation" : false,

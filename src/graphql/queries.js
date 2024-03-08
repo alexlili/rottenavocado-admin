@@ -1,6 +1,40 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getBornToday = /* GraphQL */ `
+  query GetBornToday($id: ID!) {
+    getBornToday(id: $id) {
+      id
+      avatarImage
+      name
+      age
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listBornTodays = /* GraphQL */ `
+  query ListBornTodays(
+    $filter: ModelBornTodayFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBornTodays(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        avatarImage
+        name
+        age
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getFeaturedToday = /* GraphQL */ `
   query GetFeaturedToday($id: ID!) {
     getFeaturedToday(id: $id) {

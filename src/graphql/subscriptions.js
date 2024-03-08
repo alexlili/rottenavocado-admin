@@ -1,6 +1,51 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateBornToday = /* GraphQL */ `
+  subscription OnCreateBornToday(
+    $filter: ModelSubscriptionBornTodayFilterInput
+  ) {
+    onCreateBornToday(filter: $filter) {
+      id
+      avatarImage
+      name
+      age
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateBornToday = /* GraphQL */ `
+  subscription OnUpdateBornToday(
+    $filter: ModelSubscriptionBornTodayFilterInput
+  ) {
+    onUpdateBornToday(filter: $filter) {
+      id
+      avatarImage
+      name
+      age
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteBornToday = /* GraphQL */ `
+  subscription OnDeleteBornToday(
+    $filter: ModelSubscriptionBornTodayFilterInput
+  ) {
+    onDeleteBornToday(filter: $filter) {
+      id
+      avatarImage
+      name
+      age
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateFeaturedToday = /* GraphQL */ `
   subscription OnCreateFeaturedToday(
     $filter: ModelSubscriptionFeaturedTodayFilterInput
