@@ -13,6 +13,8 @@ export { default as FeaturedTodayUpdateForm } from "./FeaturedTodayUpdateForm";
 export { default as MovieCreateForm } from "./MovieCreateForm";
 export { default as MovieNewsCreateForm } from "./MovieNewsCreateForm";
 export { default as MovieNewsUpdateForm } from "./MovieNewsUpdateForm";
+export { default as MovieRatingCreateForm } from "./MovieRatingCreateForm";
+export { default as MovieRatingUpdateForm } from "./MovieRatingUpdateForm";
 export { default as MovieUpdateForm } from "./MovieUpdateForm";
 export { default as NoteCreateForm } from "./NoteCreateForm";
 export { default as NoteUpdateForm } from "./NoteUpdateForm";

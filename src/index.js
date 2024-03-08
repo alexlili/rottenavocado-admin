@@ -9,6 +9,7 @@ import UpNextMedias from './pages/upNextMedia'
 import FeaturedToday from './pages/featuredToday'
 import BornToday from './pages/bornToday'
 import Movie from './pages/movie'
+import MovieRating from './pages/movieRating'
 import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports';
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
         path: "/movie",
         element: <Movie />,
       },
+      {
+        path: "/movieRating",
+        element: <MovieRating />
+      }
       
     ],
   },

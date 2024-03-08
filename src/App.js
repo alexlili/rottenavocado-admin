@@ -48,6 +48,11 @@ const menuItems = [
     label: 'movie',
     key: '/movie',
     icon: <HomeOutlined />,
+  },
+  {
+    label: 'movieRating',
+    key: '/movieRating',
+    icon: <HomeOutlined />,
   }
 ];
 const App = ({ signOut, user }) => {

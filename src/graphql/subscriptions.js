@@ -1,6 +1,51 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateMovieRating = /* GraphQL */ `
+  subscription OnCreateMovieRating(
+    $filter: ModelSubscriptionMovieRatingFilterInput
+  ) {
+    onCreateMovieRating(filter: $filter) {
+      id
+      movieId
+      userId
+      rate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateMovieRating = /* GraphQL */ `
+  subscription OnUpdateMovieRating(
+    $filter: ModelSubscriptionMovieRatingFilterInput
+  ) {
+    onUpdateMovieRating(filter: $filter) {
+      id
+      movieId
+      userId
+      rate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteMovieRating = /* GraphQL */ `
+  subscription OnDeleteMovieRating(
+    $filter: ModelSubscriptionMovieRatingFilterInput
+  ) {
+    onDeleteMovieRating(filter: $filter) {
+      id
+      movieId
+      userId
+      rate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateMovie = /* GraphQL */ `
   subscription OnCreateMovie($filter: ModelSubscriptionMovieFilterInput) {
     onCreateMovie(filter: $filter) {

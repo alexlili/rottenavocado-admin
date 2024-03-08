@@ -1,6 +1,54 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createMovieRating = /* GraphQL */ `
+  mutation CreateMovieRating(
+    $input: CreateMovieRatingInput!
+    $condition: ModelMovieRatingConditionInput
+  ) {
+    createMovieRating(input: $input, condition: $condition) {
+      id
+      movieId
+      userId
+      rate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateMovieRating = /* GraphQL */ `
+  mutation UpdateMovieRating(
+    $input: UpdateMovieRatingInput!
+    $condition: ModelMovieRatingConditionInput
+  ) {
+    updateMovieRating(input: $input, condition: $condition) {
+      id
+      movieId
+      userId
+      rate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteMovieRating = /* GraphQL */ `
+  mutation DeleteMovieRating(
+    $input: DeleteMovieRatingInput!
+    $condition: ModelMovieRatingConditionInput
+  ) {
+    deleteMovieRating(input: $input, condition: $condition) {
+      id
+      movieId
+      userId
+      rate
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createMovie = /* GraphQL */ `
   mutation CreateMovie(
     $input: CreateMovieInput!

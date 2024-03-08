@@ -1,3 +1,11 @@
+type MovieRating @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  movieId: String
+  userId: String
+  rate: Int
+}
+
+
 type Movie @model @auth(rules: [{allow: public}]) {
   id: ID!
   director: String
@@ -7,7 +15,6 @@ type Movie @model @auth(rules: [{allow: public}]) {
   imageList: String
   introduction: String
 }
-
 
 type BornToday @model @auth(rules: [{allow: public}]) {
   id: ID!
