@@ -7,14 +7,6 @@ import {
     deleteMovieRating as deleteMovieRatingMutation,
 } from "../graphql/mutations";
 import { generateClient } from "aws-amplify/api";
-import {
-    Flex,
-    Text,
-    TextField,
-    View,
-    DropZone,
-    Button as AmplifyButton
-} from "@aws-amplify/ui-react";
 const client = generateClient();
 
 const Index = () => {
@@ -26,7 +18,7 @@ const Index = () => {
         {
             title: 'movieId',
             dataIndex: 'movieId',
-            width: '15%',
+            width: '40s%',
             editable: true,
         },
         {
@@ -38,7 +30,7 @@ const Index = () => {
         {
             title: 'rate',
             dataIndex: 'rate',
-            width: '40%',
+            width: '10%',
             editable: true,
         },
         {
