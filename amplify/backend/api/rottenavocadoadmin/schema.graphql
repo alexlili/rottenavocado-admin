@@ -5,7 +5,6 @@ type MovieRating @model @auth(rules: [{allow: public}]) {
   rate: Int
 }
 
-
 type Movie @model @auth(rules: [{allow: public}]) {
   id: ID!
   director: String
